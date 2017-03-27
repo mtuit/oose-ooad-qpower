@@ -26,6 +26,10 @@ public class QuizData implements IPersistence {
 									"Berlijn",
 									"Topografie",
 									"NL"));
+		vragen.add(new OpenVraag("Wat is de hoogste berg van de Alpen",
+									new ArrayList<String>(Arrays.asList("Mont Blanc", "mont blanc", "Witte berg", "witte berg")),
+									"Topografie",
+									"NL"));
 	}
 
 }

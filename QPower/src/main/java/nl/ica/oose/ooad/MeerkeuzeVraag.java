@@ -12,4 +12,8 @@ public class MeerkeuzeVraag extends Vraag {
 		this.antwoord = antwoord;
 		this.opties = opties;
 	}
+
+	public boolean checkAntwoord(String antwoordSpeler) {
+		return antwoord.equals(antwoordSpeler);
+	}
 }

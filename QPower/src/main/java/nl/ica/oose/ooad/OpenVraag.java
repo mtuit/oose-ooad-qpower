@@ -10,4 +10,14 @@ public class OpenVraag extends Vraag {
 		super(vraag, rubriek, taal);
 		this.antwoorden = antwoorden;
 	}
+
+	public boolean checkAntwoord(String antwoordSpeler) {
+		for (String antwoord : antwoorden) {
+			if (antwoord.equals(antwoordSpeler)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 }

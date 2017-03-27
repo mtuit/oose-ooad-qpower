@@ -1,6 +1,8 @@
 package nl.ica.oose.ooad;
 
 
+import java.io.IOException;
+
 public class Quiz {
 	private String taal;
 	private Speler speler;
@@ -15,10 +17,16 @@ public class Quiz {
 		Speler mick = new Speler("Mick");
 		Quiz quiz = new Quiz("NL", mick);
 		quiz.nieuwSinglePlayerQuiz();
+
 	}
 
 	public void nieuwSinglePlayerQuiz() {
-		Ronde ronde = new Ronde();
+		this.ronde = new Ronde(speler);
+		try {
+			ronde.startRonde();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void beëindigspel() {

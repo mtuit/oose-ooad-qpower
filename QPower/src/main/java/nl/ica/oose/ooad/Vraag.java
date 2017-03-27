@@ -5,7 +5,6 @@ public abstract class Vraag {
 	private String vraag;
 	private String rubriek;
 	private String taal;
-	private Clock tijd;
 	private int punten;
 	private Ronde ronde;
 
@@ -15,8 +14,9 @@ public abstract class Vraag {
 		this.taal = taal;
 	}
 
-	public boolean checkAntwoord(String antwoord) {
-		return false;
-	}
+	public abstract boolean checkAntwoord(String antwoordSpeler);
 
+	public String getVraag() {
+		return vraag;
+	}
 }
