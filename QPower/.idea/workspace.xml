@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a13b7c2e-c397-4957-a8b0-8fc8d52e438f" name="Default" comment="v1.0">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/nl/ica/oose/ooad/App.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/nl/ica/oose/ooad/Clock.java" afterPath="" />
+    <list default="true" id="a13b7c2e-c397-4957-a8b0-8fc8d52e438f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="6a4c7a22-0285-4e07-919f-3fc25ddbe0a1" name="Rejected commit: Default" comment="v1.0">
@@ -711,12 +708,20 @@
       <updated>1490361666873</updated>
       <workItem from="1490361670640" duration="3792000" />
       <workItem from="1490600716134" duration="228000" />
-      <workItem from="1490620620624" duration="4513000" />
+      <workItem from="1490620620624" duration="4543000" />
     </task>
+    <task id="LOCAL-00001" summary="v1.0">
+      <created>1490629920562</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1490629920562</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8533000" />
+    <option name="totallyTimeSpent" value="8563000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
