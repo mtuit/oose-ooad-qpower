@@ -1,7 +1,5 @@
 package nl.ica.oose.ooad;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,9 +8,8 @@ import java.util.List;
 public class Ronde {
 
 	private Speler speler;
-	private int totaleTijd;
+	private long totaleTijd;
 	private List<Vraag> vragen;
-	private Quiz quiz;
 
 	public Ronde(Speler speler) {
 		this.speler = speler;
@@ -28,13 +25,14 @@ public class Ronde {
 
 			if (vraag.checkAntwoord(antwoord)) {
 				speler.setScore(speler.getScore() + 10);
-				speler.setTijd(timer.getVerstrekenTijdInSeconde());
-			} else {
-				speler.setTijd(timer.getVerstrekenTijdInSeconde());
-				System.out.println("Fout!");
-				break;
+				totaleTijd = timer.getVerstrekenTijdInSeconde();
+			} else if (!vraag.checkAntwoord(antwoord)){
+				// Do nothing
+			} else if (timer.getVerstrekenTijdInSeconde() > vraag.getBeschikbareTijdInSeconde()){
+				System.out.println("Tijd is verstreken!");
 			}
 		}
+		totaleTijd = timer.getVerstrekenTijdInSeconde();
 	}
 
 	public List<Vraag> genereerRonde() {
@@ -43,5 +41,8 @@ public class Ronde {
 		return vragen;
 	}
 
-
+	@Override
+	public String toString() {
+		return "totaleTijd = " + totaleTijd;
+	}
 }

@@ -5,20 +5,20 @@ public abstract class Vraag {
 	private String vraag;
 	private String rubriek;
 	private String taal;
-	private int punten;
-	private Ronde ronde;
+	private int beschikbareTijdInSeconde;
 
-	public Vraag(String vraag, String rubriek, String taal) {
+	public Vraag(String vraag, String rubriek, String taal, int beschikbareTijdInSeconde) {
 		this.vraag = vraag;
 		this.rubriek = rubriek;
 		this.taal = taal;
+		this.beschikbareTijdInSeconde = beschikbareTijdInSeconde;
 	}
 
 	public abstract boolean checkAntwoord(String antwoordSpeler);
 
-	public String getVraag() {
-		return vraag;
-	}
-
 	public abstract String printVraag();
+
+	public int getBeschikbareTijdInSeconde() {
+		return beschikbareTijdInSeconde;
+	}
 }

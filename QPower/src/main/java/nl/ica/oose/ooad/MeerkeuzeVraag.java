@@ -8,8 +8,8 @@ public class MeerkeuzeVraag extends Vraag {
 	private String vraag;
 	private String antwoord;
 
-	public MeerkeuzeVraag(String vraag, List<String> opties, String antwoord, String rubriek, String taal) {
-		super(vraag, rubriek, taal);
+	public MeerkeuzeVraag(String vraag, String rubriek, String taal, int beschikbareTijd, List<String> opties, String antwoord) {
+		super(vraag, rubriek, taal, beschikbareTijd);
 		this.vraag = vraag;
 		this.antwoord = antwoord;
 		this.opties = opties;

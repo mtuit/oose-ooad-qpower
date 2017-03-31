@@ -31,8 +31,13 @@ public class Quiz {
 	}
 
 	public void beëindigSpel() {
+		printSpelGegevens();
+	}
+
+	private void printSpelGegevens() {
 		System.out.println("Uw eindstatistieken zijn als volgt: ");
 		System.out.println(speler.toString());
+		System.out.println(ronde.toString());
 	}
 
 }

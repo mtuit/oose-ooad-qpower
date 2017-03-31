@@ -5,16 +5,16 @@ package nl.ica.oose.ooad;
  */
 public class Timer {
 
-	private final long START_MILLIS;
+	private final long START_MILLISECONDE;
 	private long verstrekenTijd;
 
 	public Timer() {
 		this.verstrekenTijd = 0;
-		this.START_MILLIS = System.currentTimeMillis();
+		this.START_MILLISECONDE = System.currentTimeMillis();
 	}
 
 	public void setVerstrekenTijd() {
-		verstrekenTijd = System.currentTimeMillis() - START_MILLIS;
+		verstrekenTijd = System.currentTimeMillis() - START_MILLISECONDE;
 	}
 
 	public long getVerstrekenTijdInSeconde() {

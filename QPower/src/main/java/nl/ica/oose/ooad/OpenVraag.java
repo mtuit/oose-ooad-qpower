@@ -7,8 +7,8 @@ public class OpenVraag extends Vraag {
 	private String vraag;
 	private List<String> antwoorden;
 
-	public OpenVraag(String vraag, List<String> antwoorden, String rubriek, String taal) {
-		super(vraag, rubriek, taal);
+	public OpenVraag(String vraag, String rubriek, String taal, int beschikbareTijd, List<String> antwoorden) {
+		super(vraag, rubriek, taal, beschikbareTijd);
 		this.vraag = vraag;
 		this.antwoorden = antwoorden;
 	}

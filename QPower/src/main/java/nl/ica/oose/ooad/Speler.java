@@ -4,11 +4,9 @@ package nl.ica.oose.ooad;
 public class Speler {
 
 	private int score;
-	private long tijd;
 
 	public Speler() {
 		this.score = 0;
-		this.tijd = 0;
 	}
 
 	public int getScore() {
@@ -21,13 +19,6 @@ public class Speler {
 
 	@Override
 	public String toString() {
-		return "Speler{" +
-				"score = " + score +
-				", tijd = " + tijd + " seconde" +
-				'}';
-	}
-
-	public void setTijd(long tijd) {
-		this.tijd = tijd;
+		return "score = " + score;
 	}
 }
