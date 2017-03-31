@@ -9,10 +9,10 @@ public class Quiz {
 	private Speler speler;
 	private Ronde ronde;
 
-	public Quiz(String taal, Speler speler, IPuntentellingStrategie strategie) {
+	public Quiz(String taal, Speler speler, IPuntentellingStrategie puntentellingStrategie) {
 		this.taal = taal;
 		this.speler = speler;
-		this.puntentellingStrategie = strategie;
+		this.puntentellingStrategie = puntentellingStrategie;
 	}
 
 	public static void main(String[] args) {
@@ -24,9 +24,10 @@ public class Quiz {
 	}
 
 	public void nieuwSinglePlayerQuiz() {
-		this.ronde = new Ronde(speler, puntentellingStrategie);
+		this.ronde = new Ronde(puntentellingStrategie);
 		try {
 			ronde.startRonde();
+			speler.setScore(ronde.getRondeScore());
 			beëindigSpel();
 		} catch (IOException e) {
 			e.printStackTrace();

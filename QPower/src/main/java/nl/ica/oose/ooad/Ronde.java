@@ -8,12 +8,11 @@ import java.util.List;
 public class Ronde {
 
 	private final IPuntentellingStrategie puntentellingStrategie;
-	private Speler speler;
-	private long totaleTijd;
+	private long rondeTijd;
+	private int rondeScore;
 	private List<Vraag> vragen;
 
-	public Ronde(Speler speler, IPuntentellingStrategie strategie) {
-		this.speler = speler;
+	public Ronde(IPuntentellingStrategie strategie) {
 		this.puntentellingStrategie = strategie;
 		this.vragen = genereerRonde();
 	}
@@ -26,15 +25,23 @@ public class Ronde {
 			String antwoord = br.readLine();
 
 			if (vraag.checkAntwoord(antwoord)) {
-				speler.setScore(speler.getScore() + puntentellingStrategie.berekenScore(timer.getVerstrekenTijdInSeconde()));
-				totaleTijd = timer.getVerstrekenTijdInSeconde();
+				updateRondeScore(timer);
+				updateRondeTijd(timer);
 			} else if (!vraag.checkAntwoord(antwoord)){
 				// Do nothing
 			} else if (timer.getVerstrekenTijdInSeconde() > vraag.getBeschikbareTijdInSeconde()){
 				System.out.println("Tijd is verstreken!");
 			}
 		}
-		totaleTijd = timer.getVerstrekenTijdInSeconde();
+		rondeTijd = timer.getVerstrekenTijdInSeconde();
+	}
+
+	private void updateRondeTijd(Timer timer) {
+		rondeTijd = timer.getVerstrekenTijdInSeconde();
+	}
+
+	private void updateRondeScore(Timer timer) {
+		rondeScore += puntentellingStrategie.berekenScore(timer.getVerstrekenTijdInSeconde());
 	}
 
 	public List<Vraag> genereerRonde() {
@@ -43,8 +50,11 @@ public class Ronde {
 		return vragen;
 	}
 
+	public int getRondeScore() {
+		return rondeScore;
+	}
 	@Override
 	public String toString() {
-		return "totaleTijd = " + totaleTijd;
+		return "rondeTijd = " + rondeTijd;
 	}
 }
