@@ -7,12 +7,14 @@ import java.util.List;
 
 public class Ronde {
 
+	private final IPuntentellingStrategie puntentellingStrategie;
 	private Speler speler;
 	private long totaleTijd;
 	private List<Vraag> vragen;
 
-	public Ronde(Speler speler) {
+	public Ronde(Speler speler, IPuntentellingStrategie strategie) {
 		this.speler = speler;
+		this.puntentellingStrategie = strategie;
 		this.vragen = genereerRonde();
 	}
 
@@ -24,7 +26,7 @@ public class Ronde {
 			String antwoord = br.readLine();
 
 			if (vraag.checkAntwoord(antwoord)) {
-				speler.setScore(speler.getScore() + 10);
+				speler.setScore(speler.getScore() + puntentellingStrategie.berekenScore(timer.getVerstrekenTijdInSeconde()));
 				totaleTijd = timer.getVerstrekenTijdInSeconde();
 			} else if (!vraag.checkAntwoord(antwoord)){
 				// Do nothing

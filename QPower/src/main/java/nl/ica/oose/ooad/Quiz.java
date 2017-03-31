@@ -4,24 +4,27 @@ package nl.ica.oose.ooad;
 import java.io.IOException;
 
 public class Quiz {
+	private final IPuntentellingStrategie puntentellingStrategie;
 	private String taal;
 	private Speler speler;
 	private Ronde ronde;
 
-	public Quiz(String taal, Speler speler) {
+	public Quiz(String taal, Speler speler, IPuntentellingStrategie strategie) {
 		this.taal = taal;
 		this.speler = speler;
+		this.puntentellingStrategie = strategie;
 	}
 
 	public static void main(String[] args) {
 		Speler speler = new Speler();
-		Quiz quiz = new Quiz("NL", speler);
+		IPuntentellingStrategie lineairePuntentelling = new LineairePuntentelling();
+		Quiz quiz = new Quiz("NL", speler, lineairePuntentelling);
 		quiz.nieuwSinglePlayerQuiz();
 
 	}
 
 	public void nieuwSinglePlayerQuiz() {
-		this.ronde = new Ronde(speler);
+		this.ronde = new Ronde(speler, puntentellingStrategie);
 		try {
 			ronde.startRonde();
 			beëindigSpel();
