@@ -4,11 +4,9 @@ package nl.ica.oose.ooad;
 public class Speler {
 
 	private int score;
-	private String naam;
 	private long tijd;
 
-	public Speler(String naam) {
-		this.naam = naam;
+	public Speler() {
 		this.score = 0;
 		this.tijd = 0;
 	}
@@ -25,7 +23,6 @@ public class Speler {
 	public String toString() {
 		return "Speler{" +
 				"score = " + score +
-				", naam = '" + naam + '\'' +
 				", tijd = " + tijd + " seconde" +
 				'}';
 	}

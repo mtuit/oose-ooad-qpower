@@ -5,8 +5,6 @@ import com.sun.org.apache.xpath.internal.SourceTree;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.SyncFailedException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Ronde {
@@ -25,18 +23,15 @@ public class Ronde {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Timer timer = new Timer();
 		for (Vraag vraag : vragen) {
-
-			System.out.println(vraag.getVraag());
-
+			System.out.println(vraag.printVraag());
 			String antwoord = br.readLine();
+
 			if (vraag.checkAntwoord(antwoord)) {
 				speler.setScore(speler.getScore() + 10);
 				speler.setTijd(timer.getVerstrekenTijdInSeconde());
 			} else {
 				speler.setTijd(timer.getVerstrekenTijdInSeconde());
 				System.out.println("Fout!");
-				System.out.println("Uw eindstatistieken zijn als volgt: ");
-				System.out.println(speler.toString());
 				break;
 			}
 		}

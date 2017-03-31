@@ -15,18 +15,18 @@ public class QuizData implements IPersistence {
 	}
 
 	private void init() {
-		vragen.add(new MeerkeuzeVraag("Wat is de hoofdstad van Nederland",
+		vragen.add(new MeerkeuzeVraag("Wat is de hoofdstad van Nederland?",
 									new ArrayList<String>(Arrays.asList("Amsterdam", "Rotterdam", "Utrecht", "Nijmegen")),
 									"Amsterdam",
 									"Topografie",
 									"NL"));
 
-		vragen.add(new MeerkeuzeVraag("Wat is de hoofdstad van Duitsland",
+		vragen.add(new MeerkeuzeVraag("Wat is de hoofdstad van Duitsland?",
 									new ArrayList<String>(Arrays.asList("München", "Berlijn", "Köln", "Hannover")),
 									"Berlijn",
 									"Topografie",
 									"NL"));
-		vragen.add(new OpenVraag("Wat is de hoogste berg van de Alpen",
+		vragen.add(new OpenVraag("Wat is de hoogste berg van de Alpen?",
 									new ArrayList<String>(Arrays.asList("Mont Blanc", "mont blanc", "Witte berg", "witte berg")),
 									"Topografie",
 									"NL"));

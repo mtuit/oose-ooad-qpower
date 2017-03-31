@@ -14,8 +14,8 @@ public class Quiz {
 	}
 
 	public static void main(String[] args) {
-		Speler mick = new Speler("Mick");
-		Quiz quiz = new Quiz("NL", mick);
+		Speler speler = new Speler();
+		Quiz quiz = new Quiz("NL", speler);
 		quiz.nieuwSinglePlayerQuiz();
 
 	}
@@ -24,13 +24,15 @@ public class Quiz {
 		this.ronde = new Ronde(speler);
 		try {
 			ronde.startRonde();
+			beëindigSpel();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void beëindigspel() {
-
+	public void beëindigSpel() {
+		System.out.println("Uw eindstatistieken zijn als volgt: ");
+		System.out.println(speler.toString());
 	}
 
 }

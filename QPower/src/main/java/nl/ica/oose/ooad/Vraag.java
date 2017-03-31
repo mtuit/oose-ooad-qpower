@@ -19,4 +19,6 @@ public abstract class Vraag {
 	public String getVraag() {
 		return vraag;
 	}
+
+	public abstract String printVraag();
 }
