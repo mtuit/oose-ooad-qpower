@@ -4,7 +4,6 @@ import java.util.List;
 
 public class OpenVraag extends Vraag {
 
-	private String vraag;
 	private List<String> antwoorden;
 
 	public OpenVraag(String vraag, String rubriek, String taal, int beschikbareTijd, List<String> antwoorden) {

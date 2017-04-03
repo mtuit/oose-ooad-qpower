@@ -2,7 +2,7 @@ package nl.ica.oose.ooad;
 
 public abstract class Vraag {
 
-	private String vraag;
+	protected String vraag;
 	private String rubriek;
 	private String taal;
 	private int beschikbareTijdInSeconde;

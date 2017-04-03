@@ -53,6 +53,7 @@ public class Ronde {
 	public int getRondeScore() {
 		return rondeScore;
 	}
+
 	@Override
 	public String toString() {
 		return "rondeTijd = " + rondeTijd;
