@@ -3,9 +3,9 @@ package nl.ica.oose.ooad;
 public abstract class Vraag {
 
 	protected String vraag;
-	private String rubriek;
-	private String taal;
-	private int beschikbareTijdInSeconde;
+	protected String rubriek;
+	protected String taal;
+	protected int beschikbareTijdInSeconde;
 
 	public Vraag(String vraag, String rubriek, String taal, int beschikbareTijdInSeconde) {
 		this.vraag = vraag;
